@@ -9,6 +9,12 @@
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
     }
+    function filterNews() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('.news-card').forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(input) ? "" : "none";
+      });
+    }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,11 +35,6 @@
       <h1 class="text-2xl font-bold">DailyBuzz</h1>
       <nav>
         <a href="#" class="mx-2 hover:underline">Home</a>
-        <a href="#trending" class="mx-2 hover:underline">Trending</a>
-        <a href="#tech" class="mx-2 hover:underline">Technology</a>
-        <a href="#entertainment" class="mx-2 hover:underline">Entertainment</a>
-        <a href="#local" class="mx-2 hover:underline">Local News</a>
-        <a href="#sports" class="mx-2 hover:underline">Sports</a>
         <a href="#contact" class="mx-2 hover:underline">Contact</a>
       </nav>
     </div>
@@ -44,32 +45,29 @@
   </marquee>
 
   <main class="container mx-auto p-4 space-y-6">
-    <section id="trending">
-      <h2 class="text-2xl font-bold mb-2">🔥 Trending</h2>
-      <p class="bg-white dark:bg-gray-800 p-4 rounded shadow">India to host G20 Youth Summit next month in Delhi.</p>
-    </section>
 
-    <section id="tech">
-      <h2 class="text-2xl font-bold mb-2">💻 Technology</h2>
-      <p class="bg-white dark:bg-gray-800 p-4 rounded shadow">Apple confirms AirPods Pro 3 coming with improved battery life.</p>
-    </section>
+    <input type="text" id="searchInput" onkeyup="filterNews()" placeholder="Search news..." class="p-2 border rounded w-full mb-4 dark:bg-gray-800 dark:text-white">
 
-    <section id="entertainment">
-      <h2 class="text-2xl font-bold mb-2">🎬 Entertainment</h2>
-      <p class="bg-white dark:bg-gray-800 p-4 rounded shadow">New Bollywood movie crosses 300Cr in just 5 days!</p>
-    </section>
+    <div class="space-y-4">
+      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <h2 class="font-bold text-xl">India to host G20 Youth Summit</h2>
+        <p>Next month in Delhi, international delegates expected.</p>
+      </div>
+      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <h2 class="font-bold text-xl">Apple confirms AirPods Pro 3</h2>
+        <p>Improved battery life and new design expected.</p>
+      </div>
+      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <h2 class="font-bold text-xl">Ahmedabad Metro Phase 2</h2>
+        <p>Phase 2 operations to begin in August 2025.</p>
+      </div>
+      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
+        <h2 class="font-bold text-xl">India beats Australia in T20</h2>
+        <p>A thrilling match ends with India as champions.</p>
+      </div>
+    </div>
 
-    <section id="local">
-      <h2 class="text-2xl font-bold mb-2">🏙️ Local News</h2>
-      <p class="bg-white dark:bg-gray-800 p-4 rounded shadow">Ahmedabad Metro phase 2 to start operations in August 2025.</p>
-    </section>
-
-    <section id="sports">
-      <h2 class="text-2xl font-bold mb-2">🏆 Sports</h2>
-      <p class="bg-white dark:bg-gray-800 p-4 rounded shadow">India beats Australia in a thrilling T20 final.</p>
-    </section>
-
-    <section id="contact" class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+    <section id="contact" class="bg-white dark:bg-gray-800 p-4 rounded shadow mt-6">
       <h2 class="text-xl font-semibold mb-2">📬 Contact Us</h2>
       <form class="flex flex-col gap-2">
         <input type="text" placeholder="Your Name" class="p-2 border rounded dark:bg-gray-700">
