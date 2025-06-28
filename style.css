@@ -1,7 +1,23 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: #f9f9f9;
+  background: #f0f0f0;
+}
+h1 {
+  text-align: center;
+}
+.categories {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.categories button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
 }
 .news-container {
   display: grid;
@@ -13,6 +29,10 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.news-card:hover {
+  transform: translateY(-5px);
 }
 .news-card img {
   width: 100%;

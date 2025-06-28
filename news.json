@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Government Launches New Scheme",
+    "summary": "A new initiative to support rural development.",
+    "image": "images/news1.jpg",
+    "category": "politics"
+  },
+  {
+    "title": "AI Revolution in 2025",
+    "summary": "Technology companies are embracing AI at scale.",
+    "image": "images/news2.jpg",
+    "category": "tech"
+  },
+  {
+    "title": "India Wins Cricket Series",
+    "summary": "A historic win in overseas conditions.",
+    "image": "images/news3.jpg",
+    "category": "sports"
+  }
+]
