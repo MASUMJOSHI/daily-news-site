@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+}
+.news-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.news-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.news-card h2 {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+.news-card p {
+  font-size: 0.9rem;
+  margin: 0 10px 10px;
+}

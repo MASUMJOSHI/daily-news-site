@@ -1,87 +1,34 @@
-
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DailyBuzz - News Portal</title>
-  <script>
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
-    }
-    function filterNews() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      document.querySelectorAll('.news-card').forEach(card => {
-        card.style.display = card.innerText.toLowerCase().includes(input) ? "" : "none";
-      });
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily News Site</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white font-sans">
+<body>
+  <h1>Top News</h1>
 
-  <div class="text-right p-2">
-    <button onclick="toggleDarkMode()" class="px-4 py-1 bg-gray-300 dark:bg-gray-700 rounded text-sm">🌙 Dark Mode</button>
-    <a href="index_hi.html" class="text-sm text-blue-600 dark:text-blue-300 underline ml-4">हिंदी में देखें</a>
+  <div class="news-container">
+    <div class="news-card politics">
+      <img src="images/news1.jpg" alt="News 1">
+      <h2>Political News Headline</h2>
+      <p>This is a short summary of political news.</p>
+    </div>
+
+    <div class="news-card tech">
+      <img src="images/news2.jpg" alt="News 2">
+      <h2>Tech News Headline</h2>
+      <p>This is a short summary of tech news.</p>
+    </div>
+
+    <div class="news-card sports">
+      <img src="images/news3.jpg" alt="News 3">
+      <h2>Sports News Headline</h2>
+      <p>This is a short summary of sports news.</p>
+    </div>
   </div>
 
-  <header class="bg-blue-600 text-white p-4 shadow">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">DailyBuzz</h1>
-      <nav>
-        <a href="#" class="mx-2 hover:underline">Home</a>
-        <a href="#contact" class="mx-2 hover:underline">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <marquee class="bg-red-600 text-white p-2 font-semibold" behavior="scroll" direction="left">
-    🚨 Breaking: G7 Summit concludes in Canada | India to host G20 Youth Summit | AirPods Pro 3 specs leaked | Iran fires missiles at Israel | New Metro line opens in Ahmedabad
-  </marquee>
-
-  <main class="container mx-auto p-4 space-y-6">
-
-    <input type="text" id="searchInput" onkeyup="filterNews()" placeholder="Search news..." class="p-2 border rounded w-full mb-4 dark:bg-gray-800 dark:text-white">
-
-    <div class="space-y-4">
-      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
-        <h2 class="font-bold text-xl">India to host G20 Youth Summit</h2>
-        <p>Next month in Delhi, international delegates expected.</p>
-      </div>
-      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
-        <h2 class="font-bold text-xl">Apple confirms AirPods Pro 3</h2>
-        <p>Improved battery life and new design expected.</p>
-      </div>
-      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
-        <h2 class="font-bold text-xl">Ahmedabad Metro Phase 2</h2>
-        <p>Phase 2 operations to begin in August 2025.</p>
-      </div>
-      <div class="news-card bg-white dark:bg-gray-800 p-4 rounded shadow">
-        <h2 class="font-bold text-xl">India beats Australia in T20</h2>
-        <p>A thrilling match ends with India as champions.</p>
-      </div>
-    </div>
-
-    <section id="contact" class="bg-white dark:bg-gray-800 p-4 rounded shadow mt-6">
-      <h2 class="text-xl font-semibold mb-2">📬 Contact Us</h2>
-      <form class="flex flex-col gap-2">
-        <input type="text" placeholder="Your Name" class="p-2 border rounded dark:bg-gray-700">
-        <input type="email" placeholder="Your Email" class="p-2 border rounded dark:bg-gray-700">
-        <textarea placeholder="Your Message" class="p-2 border rounded dark:bg-gray-700"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="bg-blue-600 text-white p-4 mt-8">
-    <div class="container mx-auto text-center">
-      &copy; 2025 DailyBuzz | All Rights Reserved
-    </div>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
