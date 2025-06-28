@@ -1,19 +1,19 @@
 [
   {
-    "title": "Government Launches New Scheme",
-    "summary": "A new initiative to support rural development.",
+    "title": "New Budget Announced",
+    "summary": "Finance ministry releases annual budget with focus on rural economy.",
     "image": "images/news1.jpg",
     "category": "politics"
   },
   {
-    "title": "AI Revolution in 2025",
-    "summary": "Technology companies are embracing AI at scale.",
+    "title": "Breakthrough in AI Technology",
+    "summary": "Startups are rapidly deploying AI in real-world applications.",
     "image": "images/news2.jpg",
     "category": "tech"
   },
   {
-    "title": "India Wins Cricket Series",
-    "summary": "A historic win in overseas conditions.",
+    "title": "India Clinches Series Win",
+    "summary": "With a stunning chase, India wins the cricket series.",
     "image": "images/news3.jpg",
     "category": "sports"
   }

@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily News (Dynamic)</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masum's News</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Daily News</h1>
+  <header>
+    <h1>📰 Masum's Daily News</h1>
+    <nav class="categories">
+      <button onclick="filterNews('all')">All</button>
+      <button onclick="filterNews('politics')">Politics</button>
+      <button onclick="filterNews('tech')">Technology</button>
+      <button onclick="filterNews('sports')">Sports</button>
+    </nav>
+  </header>
 
-  <nav class="categories">
-    <button onclick="filterNews('all')">All</button>
-    <button onclick="filterNews('politics')">Politics</button>
-    <button onclick="filterNews('tech')">Technology</button>
-    <button onclick="filterNews('sports')">Sports</button>
-  </nav>
+  <main>
+    <div class="news-container" id="newsContainer"></div>
+  </main>
 
-  <div class="news-container" id="newsContainer">
-    <!-- News Cards will be loaded here -->
-  </div>
+  <footer>
+    <p>© 2025 Masum Joshi | Powered by GitHub Pages</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
