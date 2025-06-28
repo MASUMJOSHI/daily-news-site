@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DailyBuzz - समाचार पोर्टल</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+  <div class="text-right p-2">
+    <a href="index.html" class="text-sm text-blue-600 underline">View in English</a>
+  </div>
+
+  <header class="bg-blue-600 text-white p-4 shadow">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">DailyBuzz</h1>
+      <nav>
+        <a href="#" class="mx-2 hover:underline">होम</a>
+        <a href="#trending" class="mx-2 hover:underline">ट्रेंडिंग</a>
+        <a href="#tech" class="mx-2 hover:underline">टेक्नोलॉजी</a>
+        <a href="#entertainment" class="mx-2 hover:underline">मनोरंजन</a>
+        <a href="#local" class="mx-2 hover:underline">स्थानीय समाचार</a>
+        <a href="#sports" class="mx-2 hover:underline">खेल</a>
+        <a href="#contact" class="mx-2 hover:underline">संपर्क करें</a>
+      </nav>
+    </div>
+  </header>
+
+  <marquee class="bg-red-600 text-white p-2 font-semibold" behavior="scroll" direction="left">
+    🚨 ब्रेकिंग: कनाडा में G7 सम्मेलन समाप्त | भारत करेगा G20 यूथ समिट की मेज़बानी | एयरपॉड्स प्रो 3 फीचर लीक | ईरान ने इज़राइल पर दागी मिसाइलें | अहमदाबाद मेट्रो लाइन शुरू
+  </marquee>
+
+  <main class="container mx-auto p-4 space-y-6">
+    <section id="trending">
+      <h2 class="text-2xl font-bold mb-2">🔥 ट्रेंडिंग</h2>
+      <p class="bg-white p-4 rounded shadow">भारत अगले महीने दिल्ली में G20 यूथ समिट की मेज़बानी करेगा।</p>
+    </section>
+
+    <section id="tech">
+      <h2 class="text-2xl font-bold mb-2">💻 टेक्नोलॉजी</h2>
+      <p class="bg-white p-4 rounded shadow">एप्पल ने पुष्टि की कि एयरपॉड्स प्रो 3 में बेहतर बैटरी लाइफ होगी।</p>
+    </section>
+
+    <section id="entertainment">
+      <h2 class="text-2xl font-bold mb-2">🎬 मनोरंजन</h2>
+      <p class="bg-white p-4 rounded shadow">नई बॉलीवुड फिल्म ने 5 दिनों में ₹300 करोड़ का आंकड़ा पार किया।</p>
+    </section>
+
+    <section id="local">
+      <h2 class="text-2xl font-bold mb-2">🏙️ स्थानीय समाचार</h2>
+      <p class="bg-white p-4 rounded shadow">अहमदाबाद मेट्रो फेज 2 अगस्त 2025 से शुरू होगा।</p>
+    </section>
+
+    <section id="sports">
+      <h2 class="text-2xl font-bold mb-2">🏆 खेल</h2>
+      <p class="bg-white p-4 rounded shadow">भारत ने ऑस्ट्रेलिया को T20 फाइनल में रोमांचक जीत दी।</p>
+    </section>
+
+    <section id="contact" class="bg-white p-4 rounded shadow">
+      <h2 class="text-xl font-semibold mb-2">📬 संपर्क करें</h2>
+      <form class="flex flex-col gap-2">
+        <input type="text" placeholder="आपका नाम" class="p-2 border rounded">
+        <input type="email" placeholder="आपका ईमेल" class="p-2 border rounded">
+        <textarea placeholder="आपका संदेश" class="p-2 border rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">भेजें</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 mt-8">
+    <div class="container mx-auto text-center">
+      &copy; 2025 DailyBuzz | सर्वाधिकार सुरक्षित
+    </div>
+  </footer>
+</body>
+</html>
