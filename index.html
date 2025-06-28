@@ -4,29 +4,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News Cards with Photos</title>
+  <title>News with Categories</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       background-color: #f4f4f4;
     }
-    .toggle-darkmode {
+    .toggle-darkmode, .lang-toggle {
       position: fixed;
       top: 10px;
       right: 10px;
       padding: 10px;
-      cursor: pointer;
-      background-color: #000;
+      margin-left: 5px;
+      background: #000;
       color: #fff;
       border: none;
       border-radius: 5px;
+      cursor: pointer;
     }
+    .lang-toggle { right: 110px; }
     .container {
       max-width: 1000px;
-      margin: 80px auto 20px;
+      margin: 100px auto 20px;
       padding: 10px;
+    }
+    .filter-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filter-btn {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
     }
     .news-card {
       display: flex;
@@ -63,20 +77,44 @@
   </style>
 </head>
 <body>
+  <button class="lang-toggle" onclick="toggleLanguage()">🌐 EN/HI</button>
   <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙 Toggle</button>
   <div class="container">
-    <div class="news-card">
-      <img src="images/news1.jpg" alt="News Image" />
+    <div class="filter-bar">
+      <button class="filter-btn" onclick="filterNews('all')">All</button>
+      <button class="filter-btn" onclick="filterNews('national')">National</button>
+      <button class="filter-btn" onclick="filterNews('world')">World</button>
+      <button class="filter-btn" onclick="filterNews('business')">Business</button>
+      <button class="filter-btn" onclick="filterNews('sports')">Sports</button>
+    </div>
+
+    <div class="news-card" data-category="national">
+      <img src="images/news1.jpg" alt="News" />
       <div class="news-content">
-        <div class="news-title">रेलवे ने शुरू की नई हेल्थ सुविधा</div>
-        <div class="news-summary">भिलडी में आयोजित हेल्थ चेकअप कैंप में 61 लोगों ने लाभ उठाया...</div>
+        <div class="news-title" lang="hi">भारत में नई स्वास्थ्य योजना शुरू</div>
+        <div class="news-title" lang="en" style="display:none;">New Health Scheme Launched in India</div>
+        <div class="news-summary" lang="hi">भिलडी में 61 लोगों ने हेल्थ चेकअप कैंप का लाभ उठाया।</div>
+        <div class="news-summary" lang="en" style="display:none;">61 people benefited from a health check-up camp in Bhildi.</div>
       </div>
     </div>
-    <div class="news-card">
-      <img src="images/news2.jpg" alt="News Image" />
+
+    <div class="news-card" data-category="world">
+      <img src="images/news2.jpg" alt="News" />
       <div class="news-content">
-        <div class="news-title">Western Railway launches new app</div>
-        <div class="news-summary">A new passenger-friendly app has been launched with train tracking & alerts.</div>
+        <div class="news-title" lang="hi">संयुक्त राष्ट्र का नया पर्यावरण अभियान</div>
+        <div class="news-title" lang="en" style="display:none;">UN launches new environmental campaign</div>
+        <div class="news-summary" lang="hi">संयुक्त राष्ट्र ने वैश्विक हरियाली अभियान की शुरुआत की।</div>
+        <div class="news-summary" lang="en" style="display:none;">The United Nations launched a global green initiative.</div>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="sports">
+      <img src="images/news3.jpg" alt="News" />
+      <div class="news-content">
+        <div class="news-title" lang="hi">भारत ने टेस्ट सीरीज जीती</div>
+        <div class="news-title" lang="en" style="display:none;">India wins the test series</div>
+        <div class="news-summary" lang="hi">भारत ने ऑस्ट्रेलिया को हराकर टेस्ट सीरीज अपने नाम की।</div>
+        <div class="news-summary" lang="en" style="display:none;">India defeated Australia to win the Test series.</div>
       </div>
     </div>
   </div>
@@ -84,6 +122,19 @@
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
+    }
+    function toggleLanguage() {
+      document.querySelectorAll("[lang='hi']").forEach(el => {
+        el.style.display = (el.style.display === "none") ? "block" : "none";
+      });
+      document.querySelectorAll("[lang='en']").forEach(el => {
+        el.style.display = (el.style.display === "none") ? "block" : "none";
+      });
+    }
+    function filterNews(category) {
+      document.querySelectorAll('.news-card').forEach(card => {
+        card.style.display = (category === 'all' || card.dataset.category === category) ? "flex" : "none";
+      });
     }
   </script>
 </body>
