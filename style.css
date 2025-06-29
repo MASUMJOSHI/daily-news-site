@@ -1,81 +1,37 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
 }
 header {
-  background: #222;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: #6200ee;
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-}
-nav ul li {
-  margin-left: 20px;
-}
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-.news-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 2rem;
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 .news-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .news-card:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
 }
-.news-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.news-card h2 {
-  padding: 1rem;
-  font-size: 1.2rem;
-}
-.news-card p {
-  padding: 0 1rem 1rem;
-  color: #555;
-}
-.news-card a {
-  display: block;
-  background: #007BFF;
-  color: white;
-  text-align: center;
-  padding: 0.7rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #222;
-  color: white;
-  margin-top: 2rem;
+.category-btn {
+    background: #6200ee;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
