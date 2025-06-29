@@ -2,194 +2,55 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily News</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    .banner {
-      position: relative;
-      height: 250px;
-      background: url('assets/images/banner.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .banner h1 {
-      color: white;
-      background: rgba(0,0,0,0.5);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-    }
-    .news-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.02);
-    }
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 1rem;
-    }
-    .card-content h3 {
-      margin: 0 0 0.5rem;
-    }
-    .card-content p {
-      font-size: 0.95rem;
-      color: #444;
-    }
-    .actions {
-      margin-top: 0.5rem;
-    }
-    .actions button {
-      margin-right: 0.5rem;
-    }
-    .subscribe {
-      background: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    .subscribe input {
-      padding: 0.5rem;
-      width: 200px;
-    }
-    .subscribe button {
-      padding: 0.5rem 1rem;
-      background: #0077cc;
-      color: white;
-      border: none;
-    }
-    footer {
-      padding: 2rem 1rem;
-      background-color: #111;
-      color: #ccc;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    footer a {
-      margin: 0 1rem;
-      color: #ccc;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
     <h1>Daily News</h1>
+    <nav>
+      <a href="#">होम</a>
+      <a href="#">राजनीति</a>
+      <a href="#">खेल</a>
+      <a href="#">बिज़नेस</a>
+    </nav>
   </header>
 
   <div class="banner">
+    <img src="banner.jpg" alt="Banner Image">
     <h1>आज की बड़ी खबरें</h1>
   </div>
-  <section class="trending-slider">
-  <h2>🔥 ट्रेंडिंग खबरें</h2>
-  <div class="slider">
-    <div class="slide">🚨 लोकसभा में आज विपक्ष का हंगामा</div>
-    <div class="slide">📢 पेट्रोल-डीजल के दामों में फिर बढ़ोतरी</div>
-    <div class="slide">⚽ भारत ने एशिया कप सेमीफाइनल में एंट्री की</div>
-    <div class="slide">💼 नौकरी की बहार - 20,000 वैकेंसी</div>
+
+  <div class="trending-slider">
+    <h2>🔥 ट्रेंडिंग खबरें</h2>
+    <div class="slider">
+      <span class="slide">🔴 लोकसभा में आज विपक्ष का हंगामा</span>
+      <span class="slide">🛢️ पेट्रोल-डीजल के दामों में फिर बढ़ोतरी</span>
+      <span class="slide">⚽ भारत ने एशिया कप सेमीफाइनल में एंट्री की</span>
+      <span class="slide">💼 नौकरी की बहार - 20,000 वैकेंसी</span>
+    </div>
   </div>
-</section>
 
-
-  <section class="news-section">
-    <div class="card">
-      <img src="assets/images/thumbnail1.jpg" alt="News 1">
-      <div class="card-content">
-        <h3>Breaking News 1</h3>
-        <p>यह पहली प्रमुख खबर का छोटा विवरण है...</p>
-        <div class="actions">
-          <button class="like-btn" onclick="incrementLike(this)" data-id="post1">👍 Like (0)</button>
-          <button onclick="leaveComment()">💬 Comment</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/thumbnail2.jpg" alt="News 2">
-      <div class="card-content">
-        <h3>Breaking News 2</h3>
-        <p>यह दूसरी प्रमुख खबर का छोटा विवरण है...</p>
-        <div class="actions">
-          <button class="like-btn" onclick="incrementLike(this)" data-id="post2">👍 Like (0)</button>
-          <button onclick="leaveComment()">💬 Comment</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="subscribe">
-    <form onsubmit="subscribe(event)">
-      <input type="email" placeholder="अपना ईमेल दर्ज करें" required>
-      <button type="submit">Subscribe</button>
-    </form>
+  <section class="articles">
+    <article>
+      <img src="news1.jpg" alt="News 1">
+      <h3>Breaking News 1</h3>
+      <p>यह पहली प्रमुख खबर का छोटा विवरण है...</p>
+    </article>
+    <article>
+      <img src="news2.jpg" alt="News 2">
+      <h3>Breaking News 2</h3>
+      <p>यह दूसरी प्रमुख खबर का छोटा विवरण है...</p>
+    </article>
   </section>
 
   <footer>
-    <p>&copy; 2025 Daily News. All rights reserved.</p>
-    <p>
-      <a href="#">होम</a> |
-      <a href="#">हमारे बारे में</a> |
-      <a href="#">संपर्क करें</a>
-    </p>
+    <p>&copy; 2025 Daily News</p>
+    <nav>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </nav>
   </footer>
-
-  <script>
-    function incrementLike(btn) {
-      const id = btn.dataset.id;
-      let count = parseInt(localStorage.getItem(id) || '0');
-      count++;
-      localStorage.setItem(id, count);
-      btn.textContent = `👍 Like (${count})`;
-    }
-
-    function leaveComment() {
-      const comment = prompt("अपना कमेंट लिखें:");
-      if (comment) alert("धन्यवाद! आपका कमेंट दर्ज हो गया है।");
-    }
-
-    function subscribe(event) {
-      event.preventDefault();
-      alert("आपने सफलतापूर्वक सब्सक्राइब कर लिया है!");
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.like-btn').forEach(btn => {
-        const id = btn.dataset.id;
-        const count = localStorage.getItem(id) || '0';
-        btn.textContent = `👍 Like (${count})`;
-      });
-    });
-  </script>
-
 </body>
-  
 </html>
