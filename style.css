@@ -18,3 +18,35 @@ article img { width: 100%; height: auto; }
 
 footer { text-align: center; padding: 1rem 0; border-top: 1px solid #ddd; margin-top: 2rem; }
 footer nav a { color: #666; margin: 0 0.3rem; }
+.trending-slider {
+  background: #fff3f3;
+  padding: 15px;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+  margin: 20px 0;
+}
+
+.trending-slider h2 {
+  font-size: 1.5rem;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  display: inline-block;
+  margin-right: 50px;
+  font-weight: bold;
+  color: #222;
+  font-size: 1.1rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
