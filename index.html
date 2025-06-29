@@ -205,5 +205,23 @@
       alert("आपने सफलतापूर्वक सब्सक्राइब कर लिया है!");
     }
   </script>
+  <script>
+  function incrementLike(btn) {
+    const id = btn.dataset.id;
+    let count = parseInt(localStorage.getItem(id) || '0');
+    count++;
+    localStorage.setItem(id, count);
+    btn.textContent = `👍 Like (${count})`;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.like-btn').forEach(btn => {
+      const id = btn.dataset.id;
+      const count = localStorage.getItem(id) || '0';
+      btn.textContent = `👍 Like (${count})`;
+    });
+  });
+</script>
+
 </body>
 </html>
