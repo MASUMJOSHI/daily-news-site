@@ -1,15 +1,24 @@
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; line-height: 1.6; padding: 1rem; background: #f9f9f9; }
-header { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; background: #222; color: white; }
-nav a { margin: 0 0.5rem; text-decoration: none; color: white; }
+body { font-family: Arial, sans-serif; line-height: 1.6; padding: 1rem; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; }
+.logo { height: 50px; }
+nav a { margin: 0 0.5rem; text-decoration: none; color: #333; }
 .banner { position: relative; margin: 1rem 0; }
 .banner img { width: 100%; height: auto; border-radius: 8px; }
-.banner h1 { position: absolute; bottom: 1rem; left: 1rem; color: white; background: rgba(0,0,0,0.6); padding: 0.5rem; border-radius: 5px; }
+.banner h1 { position: absolute; bottom: 1rem; left: 1rem; color: white; text-shadow: 1px 1px 5px black; }
 
 .articles { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; }
 article { background: #fff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; padding: 1rem; }
 article img { width: 100%; height: auto; }
+.engage button { margin-right: 0.5rem; }
+
+.newsletter { background: #f4f4f4; padding: 1rem; border-radius: 8px; margin: 2rem 0; text-align: center; }
+.newsletter input { padding: 0.5rem; width: 70%; max-width: 300px; margin-right: 0.5rem; }
+.newsletter button { padding: 0.5rem 1rem; }
+
 footer { text-align: center; padding: 1rem 0; border-top: 1px solid #ddd; margin-top: 2rem; }
+footer nav a { color: #666; margin: 0 0.3rem; }
 
 .trending-slider {
   background: #fff3f3;
@@ -17,21 +26,17 @@ footer { text-align: center; padding: 1rem 0; border-top: 1px solid #ddd; margin
   border-top: 3px solid red;
   border-bottom: 3px solid red;
   margin: 20px 0;
-  overflow: hidden;
 }
-
 .trending-slider h2 {
   font-size: 1.5rem;
   color: red;
   margin-bottom: 10px;
 }
-
 .slider {
-  display: inline-block;
+  overflow: hidden;
   white-space: nowrap;
   animation: scroll 20s linear infinite;
 }
-
 .slide {
   display: inline-block;
   margin-right: 50px;
@@ -39,7 +44,6 @@ footer { text-align: center; padding: 1rem 0; border-top: 1px solid #ddd; margin
   color: #222;
   font-size: 1.1rem;
 }
-
 @keyframes scroll {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
