@@ -1,4 +1,4 @@
-const API_KEY = 'YOUR_API_KEY'; // NewsAPI.org से फ्री API KEY लो (नीचे स्टेप 3 देखो)
+const API_KEY = '2498b0305f2e42cc9b8e1c77f52aa738'; // NewsAPI.org से फ्री API KEY लो (नीचे स्टेप 3 देखो)
 const newsContainer = document.getElementById('news-container');
 
 async function fetchNews(category = 'general') {
