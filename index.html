@@ -2,122 +2,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Upload News - Digital Media Style</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    input[type="text"], textarea, input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    input[type="submit"] {
-      background: #00c6ff;
-      background: linear-gradient(to right, #0072ff, #00c6ff);
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    input[type="submit"]:hover {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-    }
-    .preview {
-      margin-top: 30px;
-      background-color: white;
-      color: black;
-      padding: 15px;
-      border-radius: 10px;
-    }
-    .preview img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Entertainment News</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>📰 Upload Your News</h1>
-    <form id="newsForm">
-      <div class="form-group">
-        <label>News Title</label>
-        <input type="text" id="title" placeholder="Enter news title" required>
-      </div>
-      <div class="form-group">
-        <label>News Description</label>
-        <textarea id="description" placeholder="Enter news description" rows="4" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Upload Image</label>
-        <input type="file" id="imageUpload" accept="image/*">
-      </div>
-      <input type="submit" value="Post News">
-    </form>
-
-    <div class="preview" id="newsPreview" style="display: none;">
-      <h2 id="previewTitle"></h2>
-      <p id="previewDescription"></p>
-      <img id="previewImage" />
-    </div>
-  </div>
-
-  <script>
-    const form = document.getElementById('newsForm');
-    const preview = document.getElementById('newsPreview');
-    const previewTitle = document.getElementById('previewTitle');
-    const previewDescription = document.getElementById('previewDescription');
-    const previewImage = document.getElementById('previewImage');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      previewTitle.innerText = document.getElementById('title').value;
-      previewDescription.innerText = document.getElementById('description').value;
-
-      const file = document.getElementById('imageUpload').files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          previewImage.src = event.target.result;
-          preview.style.display = "block";
-        }
-        reader.readAsDataURL(file);
-      } else {
-        previewImage.src = "";
-        preview.style.display = "block";
-      }
-    });
-  </script>
+    <section class="entertainment-news">
+        <h1>Trending Entertainment News</h1>
+        <div class="news-cards">
+            <div class="card">
+                <img src="images/movie1.jpg" alt="Movie News">
+                <h2>Blockbuster Movie Breaks All Records</h2>
+                <p>The latest action film has shattered all box office records worldwide.</p>
+            </div>
+            <div class="card">
+                <img src="images/music1.jpg" alt="Music News">
+                <h2>New Music Album Tops Charts</h2>
+                <p>A popular artist’s new album is trending across all platforms.</p>
+            </div>
+            <div class="card">
+                <img src="images/celebrity1.jpg" alt="Celebrity News">
+                <h2>Celebrity Wedding Goes Viral</h2>
+                <p>Star couple’s private ceremony becomes the most talked-about event online.</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
