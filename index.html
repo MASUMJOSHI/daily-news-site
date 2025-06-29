@@ -2,225 +2,183 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Daily News Website - ताज़ा खबरें, ट्रेंडिंग आर्टिकल्स और बहुत कुछ" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daily News</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-      color: #212529;
-      line-height: 1.6;
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f4f4;
     }
     header {
-      background-color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #ccc;
-    }
-    .logo {
-      height: 50px;
-    }
-    nav {
-      margin-left: auto;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
     }
     .banner {
       position: relative;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .banner img {
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
+      height: 250px;
+      background: url('assets/images/banner.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .banner h1 {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
       color: white;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(0,0,0,0.5);
       padding: 0.5rem 1rem;
       border-radius: 5px;
     }
-    .articles {
+    .news-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
+      gap: 1rem;
+      padding: 1rem;
     }
-    article {
-      background-color: white;
+    .card {
+      background: white;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.2s;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
     }
-    article:hover {
-      transform: scale(1.01);
+    .card:hover {
+      transform: scale(1.02);
     }
-    article img {
+    .card img {
       width: 100%;
-      height: 200px;
+      height: 160px;
       object-fit: cover;
     }
-    article h2 {
+    .card-content {
       padding: 1rem;
-      font-size: 1.4rem;
-      line-height: 1.3;
-      color: #333;
     }
-    article p {
-      padding: 0 1rem 1rem;
-      color: #555;
+    .card-content h3 {
+      margin: 0 0 0.5rem;
     }
-    .engage {
-      padding: 0 1rem 1rem;
+    .card-content p {
+      font-size: 0.95rem;
+      color: #444;
     }
-    .engage button {
+    .actions {
+      margin-top: 0.5rem;
+    }
+    .actions button {
       margin-right: 0.5rem;
-      padding: 0.4rem 0.8rem;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
     }
-    .engage button:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
-    }
-    .newsletter {
-      background-color: #f1f1f1;
-      padding: 2rem;
+    .subscribe {
+      background: #fff;
+      padding: 1rem;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
     }
-    .newsletter input {
+    .subscribe input {
       padding: 0.5rem;
-      width: 250px;
-      border-radius: 5px;
+      width: 200px;
     }
-    .newsletter button {
+    .subscribe button {
       padding: 0.5rem 1rem;
-      background-color: #218838;
+      background: #0077cc;
       color: white;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
     }
     footer {
+      padding: 2rem 1rem;
+      background-color: #111;
+      color: #ccc;
       text-align: center;
-      padding: 1.5rem 0;
-      background-color: #222;
-      color: white;
-      margin-top: 2rem;
+      font-size: 0.9rem;
     }
     footer a {
+      margin: 0 1rem;
       color: #ccc;
-      margin: 0 0.5rem;
       text-decoration: none;
     }
-    footer p:last-child {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #bbb;
+    footer a:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="assets/logo.png" alt="Logo" class="logo" />
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">News</a>
-      <a href="#">Tech</a>
-      <a href="#">Sports</a>
-      <a href="#">Contact</a>
-    </nav>
+    <h1>Daily News</h1>
   </header>
 
-  <section class="banner">
-    <img src="assets/images/banner.jpg" alt="Main Banner" loading="lazy" />
-    <h1>आज की बड़ी खबर</h1>
-  </section>
+  <div class="banner">
+    <h1>आज की बड़ी खबरें</h1>
+  </div>
 
-  <section class="articles">
-    <article>
-      <img src="assets/images/thumbnail1.jpg" alt="News Image" loading="lazy" />
-      <h2>Breaking News: कुछ बड़ा हुआ</h2>
-      <p>यह एक ताज़ा खबर का संक्षिप्त विवरण है...</p>
-      <div class="engage">
-        <button onclick="incrementLike(this)">👍 Like (0)</button>
-        <button onclick="leaveComment()">💬 Comment</button>
+  <section class="news-section">
+    <div class="card">
+      <img src="assets/images/thumbnail1.jpg" alt="News 1">
+      <div class="card-content">
+        <h3>Breaking News 1</h3>
+        <p>यह पहली प्रमुख खबर का छोटा विवरण है...</p>
+        <div class="actions">
+          <button class="like-btn" onclick="incrementLike(this)" data-id="post1">👍 Like (0)</button>
+          <button onclick="leaveComment()">💬 Comment</button>
+        </div>
       </div>
-    </article>
+    </div>
+
+    <div class="card">
+      <img src="assets/images/thumbnail2.jpg" alt="News 2">
+      <div class="card-content">
+        <h3>Breaking News 2</h3>
+        <p>यह दूसरी प्रमुख खबर का छोटा विवरण है...</p>
+        <div class="actions">
+          <button class="like-btn" onclick="incrementLike(this)" data-id="post2">👍 Like (0)</button>
+          <button onclick="leaveComment()">💬 Comment</button>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="newsletter">
-    <h2>न्यूज़लेटर के लिए सब्सक्राइब करें</h2>
+  <section class="subscribe">
     <form onsubmit="subscribe(event)">
-      <input type="email" placeholder="अपना ईमेल डालें" required />
-      <button type="submit">सब्सक्राइब</button>
+      <input type="email" placeholder="अपना ईमेल दर्ज करें" required>
+      <button type="submit">Subscribe</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Daily News</p>
-    <p><a href="#">About</a> | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+    <p>&copy; 2025 Daily News. All rights reserved.</p>
+    <p>
+      <a href="#">होम</a> |
+      <a href="#">हमारे बारे में</a> |
+      <a href="#">संपर्क करें</a>
+    </p>
   </footer>
 
   <script>
     function incrementLike(btn) {
-      let text = btn.textContent;
-      let count = parseInt(text.match(/\d+/)[0]);
+      const id = btn.dataset.id;
+      let count = parseInt(localStorage.getItem(id) || '0');
       count++;
+      localStorage.setItem(id, count);
       btn.textContent = `👍 Like (${count})`;
     }
+
     function leaveComment() {
       const comment = prompt("अपना कमेंट लिखें:");
       if (comment) alert("धन्यवाद! आपका कमेंट दर्ज हो गया है।");
     }
+
     function subscribe(event) {
       event.preventDefault();
       alert("आपने सफलतापूर्वक सब्सक्राइब कर लिया है!");
     }
-  
-  function incrementLike(btn) {
-    const id = btn.dataset.id;
-    let count = parseInt(localStorage.getItem(id) || '0');
-    count++;
-    localStorage.setItem(id, count);
-    btn.textContent = `👍 Like (${count})`;
-  }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.like-btn').forEach(btn => {
-      const id = btn.dataset.id;
-      const count = localStorage.getItem(id) || '0';
-      btn.textContent = `👍 Like (${count})`;
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.like-btn').forEach(btn => {
+        const id = btn.dataset.id;
+        const count = localStorage.getItem(id) || '0';
+        btn.textContent = `👍 Like (${count})`;
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
