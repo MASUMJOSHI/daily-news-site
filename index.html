@@ -1,24 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily News</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daily News Website - ताज़ा खबरें, ट्रेंडिंग आर्टिकल्स और बहुत कुछ" />
+  <title>Daily News</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      height: 50px;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .banner {
+      position: relative;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .banner img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .banner h1 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    article {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    article:hover {
+      transform: scale(1.01);
+    }
+    article img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    article h2 {
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    article p {
+      padding: 0 1rem 1rem;
+      color: #555;
+    }
+    .engage {
+      padding: 0 1rem 1rem;
+    }
+    .engage button {
+      margin-right: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    .engage button:hover {
+      background-color: #0056b3;
+    }
+    .newsletter {
+      background-color: #f1f1f1;
+      padding: 2rem;
+      text-align: center;
+    }
+    .newsletter input {
+      padding: 0.5rem;
+      width: 250px;
+      margin-right: 1rem;
+    }
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #ccc;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>📰 Daily News</h1>
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="Search news...">
-        </div>
-    </header>
-    <div class="categories">
-        <button class="category-btn active" data-category="general">General</button>
-        <button class="category-btn" data-category="technology">Tech</button>
-        <button class="category-btn" data-category="sports">Sports</button>
-    </div>
-    <div id="news-container"></div>
-    <script src="script.js"></script>
+  <header>
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">News</a>
+      <a href="#">Tech</a>
+      <a href="#">Sports</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="assets/images/banner.jpg" alt="Main Banner" loading="lazy" />
+    <h1>आज की बड़ी खबर</h1>
+  </section>
+
+  <section class="articles">
+    <article>
+      <img src="assets/images/thumbnail1.jpg" alt="News Image" loading="lazy" />
+      <h2>Breaking News: कुछ बड़ा हुआ</h2>
+      <p>यह एक ताज़ा खबर का संक्षिप्त विवरण है...</p>
+      <div class="engage">
+        <button onclick="incrementLike(this)">👍 Like (0)</button>
+        <button onclick="leaveComment()">💬 Comment</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="newsletter">
+    <h2>न्यूज़लेटर के लिए सब्सक्राइब करें</h2>
+    <form onsubmit="subscribe(event)">
+      <input type="email" placeholder="अपना ईमेल डालें" required />
+      <button type="submit">सब्सक्राइब</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Daily News</p>
+    <p><a href="#">About</a> | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+  </footer>
+
+  <script>
+    function incrementLike(btn) {
+      let text = btn.textContent;
+      let count = parseInt(text.match(/\d+/)[0]);
+      count++;
+      btn.textContent = `👍 Like (${count})`;
+    }
+    function leaveComment() {
+      const comment = prompt("अपना कमेंट लिखें:");
+      if (comment) alert("धन्यवाद! आपका कमेंट दर्ज हो गया है।");
+    }
+    function subscribe(event) {
+      event.preventDefault();
+      alert("आपने सफलतापूर्वक सब्सक्राइब कर लिया है!");
+    }
+  </script>
 </body>
 </html>
