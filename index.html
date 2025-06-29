@@ -1,50 +1,24 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Masum Daily News</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">🗞️ Masum News</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Politics</a></li>
-        <li><a href="#">Sports</a></li>
-        <li><a href="#">Entertainment</a></li>
-        <li><a href="#">Tech</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="news-container">
-      <article class="news-card">
-        <img src="images/politics.jpg" alt="News Image" />
-        <h2>Political Update 2025</h2>
-        <p>Latest government decisions and political moves shaping the nation today...</p>
-        <a href="#">Read More</a>
-      </article>
-      <article class="news-card">
-        <img src="images/sports.jpg" alt="News Image" />
-        <h2>India Wins Cricket Series</h2>
-        <p>Team India clinched the victory in a thrilling match against Australia...</p>
-        <a href="#">Read More</a>
-      </article>
-      <article class="news-card">
-        <img src="images/technology.jpg" alt="News Image" />
-        <h2>New Smartphone Launch</h2>
-        <p>The latest smartphone model is breaking all sales records within hours of release...</p>
-        <a href="#">Read More</a>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Masum News. All rights reserved.</p>
-  </footer>
+    <header>
+        <h1>📰 Daily News</h1>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search news...">
+        </div>
+    </header>
+    <div class="categories">
+        <button class="category-btn" data-category="general">General</button>
+        <button class="category-btn" data-category="technology">Tech</button>
+        <button class="category-btn" data-category="sports">Sports</button>
+    </div>
+    <div id="news-container"></div>
+    <script src="script.js"></script>
 </body>
 </html>
