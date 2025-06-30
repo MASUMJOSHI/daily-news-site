@@ -9,74 +9,103 @@
 <body>
 
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/News-logo.png" alt="Logo" class="logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/News.svg/2048px-News.svg.png" alt="Logo" class="logo" />
     <nav>
       <a href="#">होम</a>
-      <a href="#">राजनीति</a>
+      <a href="#">राष्ट्रीय</a>
       <a href="#">खेल</a>
       <a href="#">मनोरंजन</a>
+      <a href="#">संपर्क</a>
     </nav>
   </header>
 
-  <div class="banner">
-    <img src="https://images.unsplash.com/photo-1581091012184-7f708b89d79e" alt="मुख्य खबर" />
-    <h1>आज की बड़ी खबरें</h1>
-  </div>
+  <section class="banner">
+    <img src="https://images.unsplash.com/photo-1581091870622-2c1b1d49fa2b" alt="Banner" />
+    <h1>आज की मुख्य खबरें</h1>
+  </section>
 
-  <div class="trending-slider">
-    <h2>📢 ट्रेंडिंग खबरें</h2>
+  <section class="trending-slider">
+    <h2>📢 ट्रेंडिंग न्यूज़</h2>
     <div class="slider">
-      <span class="slide">रेलवे में बड़ी भर्ती शुरू</span>
-      <span class="slide">मॉनसून की दस्तक, भारी बारिश की चेतावनी</span>
-      <span class="slide">क्रिकेट वर्ल्ड कप में भारत की शानदार जीत</span>
+      <div class="slide">रेलवे में 6180 पदों पर भर्ती</div>
+      <div class="slide">मोदी का बिहार में 5200 करोड़ का उद्घाटन</div>
+      <div class="slide">बुलेट ट्रेन ब्रिज कार्य जारी</div>
     </div>
-  </div>
+  </section>
 
   <section class="articles">
     <article>
-      <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb" alt="Article 1" />
+      <img src="https://images.unsplash.com/photo-1585842480474-41d32a3b9923" alt="News 1" />
       <h3>रेलवे में 6180 पदों पर भर्ती</h3>
-      <p>भारतीय रेलवे ने टेक्निकल पदों पर बंपर भर्ती की घोषणा की है...</p>
+      <p>भारतीय रेलवे ने 6180 टेक्निकल पदों की भर्ती की घोषणा की है।</p>
       <div class="engage">
-        <button>Like</button>
-        <button>Comment</button>
+        <button class="like-btn" data-id="news1" onclick="incrementLike(this)">👍 Like (0)</button>
+        <button onclick="leaveComment()">💬 Comment</button>
       </div>
     </article>
-
     <article>
-      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="Article 2" />
-      <h3>मॉनसून की शुरुआत</h3>
-      <p>देश के कई हिस्सों में तेज़ बारिश, किसानों को राहत...</p>
+      <img src="https://images.unsplash.com/photo-1600803907087-f6a8f5f6ba55" alt="News 2" />
+      <h3>मोदी का उद्घाटन</h3>
+      <p>प्रधानमंत्री ने बिहार में ₹5200 करोड़ की परियोजनाओं का उद्घाटन किया।</p>
       <div class="engage">
-        <button>Like</button>
-        <button>Comment</button>
+        <button class="like-btn" data-id="news2" onclick="incrementLike(this)">👍 Like (0)</button>
+        <button onclick="leaveComment()">💬 Comment</button>
       </div>
     </article>
-
     <article>
-      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b" alt="Article 3" />
-      <h3>क्रिकेट वर्ल्ड कप</h3>
-      <p>टीम इंडिया ने इंग्लैंड को हराकर सेमीफाइनल में जगह बनाई...</p>
+      <img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66" alt="News 3" />
+      <h3>बुलेट ट्रेन अपडेट</h3>
+      <p>विश्वामित्री नदी पर ब्रिज निर्माण कार्य मानसून में भी जारी रहेगा।</p>
       <div class="engage">
-        <button>Like</button>
-        <button>Comment</button>
+        <button class="like-btn" data-id="news3" onclick="incrementLike(this)">👍 Like (0)</button>
+        <button onclick="leaveComment()">💬 Comment</button>
       </div>
     </article>
   </section>
 
-  <div class="newsletter">
+  <section class="newsletter">
     <h2>न्यूज़लेटर के लिए सब्सक्राइब करें</h2>
-    <input type="email" placeholder="अपना ईमेल डालें" />
-    <button>सब्सक्राइब</button>
-  </div>
+    <form onsubmit="subscribe(event)">
+      <input type="email" placeholder="अपना ईमेल दर्ज करें" required />
+      <button type="submit">सब्सक्राइब</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 डेली न्यूज़</p>
+    <p>© 2025 डेली न्यूज़. सर्वाधिकार सुरक्षित।</p>
     <nav>
       <a href="#">गोपनीयता नीति</a>
-      <a href="#">नियम और शर्तें</a>
+      <a href="#">नियम व शर्तें</a>
     </nav>
   </footer>
+
+  <script>
+    function incrementLike(btn) {
+      const id = btn.dataset.id;
+      let count = parseInt(localStorage.getItem(id) || '0');
+      count++;
+      localStorage.setItem(id, count);
+      btn.textContent = `👍 Like (${count})`;
+    }
+
+    function leaveComment() {
+      const comment = prompt("अपना कमेंट लिखें:");
+      if (comment) alert("धन्यवाद! आपका कमेंट दर्ज हो गया है।");
+    }
+
+    function subscribe(event) {
+      event.preventDefault();
+      alert("आपने सफलतापूर्वक सब्सक्राइब कर लिया है!");
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.like-btn').forEach(btn => {
+        const id = btn.dataset.id;
+        const count = localStorage.getItem(id) || '0';
+        btn.textContent = `👍 Like (${count})`;
+      });
+    });
+  </script>
 
 </body>
 </html>
