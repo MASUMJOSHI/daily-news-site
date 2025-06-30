@@ -1,77 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DailyBuzz - Trending News</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
-    body { background-color: #f4f4f4; color: #222; padding: 20px; }
-    header { text-align: center; padding-bottom: 20px; }
-    h1 { font-size: 2.5rem; color: #1a73e8; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card {
-      background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: 0.3s ease; overflow: hidden;
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .content { padding: 15px; }
-    .title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-    .desc { font-size: 0.95rem; color: #555; }
-    .badge {
-      display: inline-block; padding: 4px 10px; font-size: 0.75rem;
-      background: #e3f2fd; color: #1a73e8; border-radius: 999px; margin-bottom: 8px;
-    }
-    footer { margin-top: 40px; text-align: center; font-size: 0.85rem; color: #777; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Hindi News Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo.jpg" alt="DailyBuzz Logo" style="height: 60px; margin-bottom: 10px;">
-    <h1>📰 DailyBuzz - Trending News</h1>
-    <p style="margin-top: 5px;">Stay updated with today’s hot topics!</p>
-  </header>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/News.svg/2048px-News.svg.png" alt="Logo" class="logo">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Politics</a>
+            <a href="#">Sports</a>
+            <a href="#">Entertainment</a>
+        </nav>
+    </header>
 
-  <div class="grid">
-    <div class="card">
-      <img src="images/metro.jpg" alt="Ahmedabad Metro" />
-      <div class="content">
-        <span class="badge">Metro</span>
-        <div class="title">Ahmedabad Metro Phase 2 Launch</div>
-        <div class="desc">Operations for Phase 2 are scheduled to begin by August 2025, connecting major city points efficiently.</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="images/t20.jpg" alt="T20 World Cup" />
-      <div class="content">
-        <span class="badge">Cricket</span>
-        <div class="title">India Wins T20 World Cup</div>
-        <div class="desc">Team India lifted the ICC T20 World Cup 2025 trophy in a thrilling final match against England at Lord’s.</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="images/apple.jpg" alt="Apple Event" />
-      <div class="content">
-        <span class="badge">Tech</span>
-        <div class="title">Apple Unveils Foldable iPhone</div>
-        <div class="desc">At WWDC 2025, Apple introduced its first foldable iPhone, featuring dual displays and AI integration.</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="images/summit.jpg" alt="G20 Summit" />
-      <div class="content">
-        <span class="badge">World</span>
-        <div class="title">G20 Summit 2025 Highlights</div>
-        <div class="desc">Leaders from around the globe gathered to discuss climate action, economic growth and digital governance.</div>
-      </div>
-    </div>
-  </div>
+    <section class="banner">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e8e5f174d5d" alt="Main Banner">
+        <h1>ताज़ा खबरें - अब हिंदी में</h1>
+    </section>
 
-  <footer>
-    © 2025 DailyBuzz | Powered by MASUM JOSHI | Latest updates every day
-  </footer>
+    <section class="trending-slider">
+        <h2>Trending Now</h2>
+        <div class="slider">
+            <div class="slide">चुनाव 2025 की तैयारी जोरों पर</div>
+            <div class="slide">भारत ने जीता एशिया कप</div>
+            <div class="slide">बॉलीवुड में नई फिल्म की धूम</div>
+            <div class="slide">मानसून का आगमन</div>
+        </div>
+    </section>
+
+    <section class="articles">
+        <article>
+            <img src="https://images.unsplash.com/photo-1580910051070-0aa286eb5ef3" alt="News 1">
+            <h3>राजनीति में नए बदलाव</h3>
+            <p>देश में चुनावी माहौल गर्माया हुआ है...</p>
+        </article>
+        <article>
+            <img src="https://images.unsplash.com/photo-1558478551-1a378f63328e" alt="News 2">
+            <h3>खेल जगत की बड़ी खबर</h3>
+            <p>भारत ने पाकिस्तान को हराकर जीत हासिल की...</p>
+        </article>
+        <article>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="News 3">
+            <h3>मनोरंजन का तड़का</h3>
+            <p>नई वेब सीरीज़ ने मचाया तहलका...</p>
+        </article>
+    </section>
+
+    <section class="newsletter">
+        <h2>हमारे न्यूज़लेटर के लिए साइन अप करें</h2>
+        <input type="email" placeholder="अपना ईमेल डालें">
+        <button>सब्सक्राइब</button>
+    </section>
+
+    <footer>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+        </nav>
+        <p>&copy; 2025 Hindi News</p>
+    </footer>
 </body>
 </html>
-    
