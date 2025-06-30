@@ -10,6 +10,28 @@
   <div class="language-switch">
   <button onclick="switchLanguage('en')">English</button>
   <button onclick="switchLanguage('hi')">हिन्दी</button>
+    <div class="lang lang-hi">
+    <h2>गुजरात में भारी बारिश की चेतावनी</h2>
+    <p>मौसम विभाग के अनुसार, गुजरात में कल से भारी बारिश हो सकती है।</p>
+  </div>
+
+  <!-- English News -->
+  <div class="lang lang-en">
+    <h2>Heavy Rain Alert in Gujarat</h2>
+    <p>According to the IMD, Gujarat will witness heavy rainfall from tomorrow.</p>
+  </div>
+
+  <!-- नीचे JavaScript डलेगा -->
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+    }
+    switchLanguage('hi');
+  </script>
+
+</body>
+
 </div>
 
 
