@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   padding: 1rem;
-  background: #fafafa;
+  background: #fefefe;
 }
 
 header {
@@ -26,6 +26,7 @@ nav a {
   margin: 0 0.5rem;
   text-decoration: none;
   color: #333;
+  font-weight: bold;
 }
 
 .banner {
@@ -46,6 +47,9 @@ nav a {
   color: white;
   text-shadow: 1px 1px 5px black;
   font-size: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .trending-slider {
@@ -77,8 +81,12 @@ nav a {
 }
 
 @keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .articles {
@@ -94,18 +102,34 @@ article {
   border-radius: 8px;
   overflow: hidden;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+article:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 article img {
   width: 100%;
   height: auto;
-  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.engage {
+  margin-top: 0.5rem;
 }
 
 .engage button {
   margin-right: 0.5rem;
-  padding: 5px 10px;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.engage button:hover {
+  background: #ddd;
 }
 
 .newsletter {
@@ -121,10 +145,17 @@ article img {
   width: 70%;
   max-width: 300px;
   margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .newsletter button {
   padding: 0.5rem 1rem;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 footer {
@@ -137,4 +168,5 @@ footer {
 footer nav a {
   color: #666;
   margin: 0 0.3rem;
+  text-decoration: none;
 }
