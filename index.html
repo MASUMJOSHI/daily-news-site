@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div style="text-align: right; margin: 10px 0;">
+    <button onclick="setLanguage('hi')">हिन्दी</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
+  <!-- Hindi version -->
+<div class="hi">
+  <h2>आज की ताज़ा खबरें</h2>
+  <p>प्रधानमंत्री ने आज नई योजना की घोषणा की।</p>
+</div>
+
+<!-- English version -->
+<div class="en">
+  <h2>Latest News Today</h2>
+  <p>The Prime Minister announced a new scheme today.</p>
+</div>
   <div class="language-switch">
   <button onclick="switchLanguage('en')">English</button>
   <button onclick="switchLanguage('hi')">हिन्दी</button>
@@ -29,6 +44,21 @@
     }
     switchLanguage('hi');
   </script>
+<script>
+  function setLanguage(lang) {
+    document.querySelectorAll('.hi').forEach(el => {
+      el.style.display = (lang === 'hi') ? 'block' : 'none';
+    });
+    document.querySelectorAll('.en').forEach(el => {
+      el.style.display = (lang === 'en') ? 'block' : 'none';
+    });
+  }
+
+  // default language
+  setLanguage('hi');
+</script>
+</body>
+
 
 </body>
 
