@@ -8,76 +8,68 @@
 </head>
 <body>
 
-  <!-- Language Switch Buttons -->
-  <div style="text-align: right; margin: 10px 15px;">
+  <!-- 🔀 Language Switcher -->
+  <div class="language-switch">
     <button onclick="switchLanguage('hi')">हिन्दी</button>
     <button onclick="switchLanguage('en')">English</button>
   </div>
 
-  <!-- Header -->
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/News.svg/2048px-News.svg.png" alt="Logo" class="logo" />
     <nav>
       <a href="#" class="lang lang-hi">होम</a>
-      <a href="#" class="lang lang-hi">राष्ट्रीय</a>
-      <a href="#" class="lang lang-hi">खेल</a>
-      <a href="#" class="lang lang-hi">मनोरंजन</a>
-      <a href="#" class="lang lang-hi">संपर्क</a>
-
       <a href="#" class="lang lang-en">Home</a>
+
+      <a href="#" class="lang lang-hi">राष्ट्रीय</a>
       <a href="#" class="lang lang-en">National</a>
+
+      <a href="#" class="lang lang-hi">खेल</a>
       <a href="#" class="lang lang-en">Sports</a>
+
+      <a href="#" class="lang lang-hi">मनोरंजन</a>
       <a href="#" class="lang lang-en">Entertainment</a>
+
+      <a href="#" class="lang lang-hi">संपर्क</a>
       <a href="#" class="lang lang-en">Contact</a>
     </nav>
   </header>
 
-  <!-- Banner -->
   <section class="banner">
     <img src="https://images.unsplash.com/photo-1581091870622-2c1b1d49fa2b" alt="Banner" />
     <h1 class="lang lang-hi">आज की मुख्य खबरें</h1>
-    <h1 class="lang lang-en">Top Headlines Today</h1>
+    <h1 class="lang lang-en">Top News of the Day</h1>
   </section>
 
-  <!-- Trending News -->
   <section class="trending-slider">
     <h2 class="lang lang-hi">📢 ट्रेंडिंग न्यूज़</h2>
     <h2 class="lang lang-en">📢 Trending News</h2>
     <div class="slider">
       <div class="slide lang lang-hi">रेलवे में 6180 पदों पर भर्ती</div>
-      <div class="slide lang lang-hi">मोदी का बिहार में 5200 करोड़ का उद्घाटन</div>
-      <div class="slide lang lang-hi">बुलेट ट्रेन ब्रिज कार्य जारी</div>
+      <div class="slide lang lang-en">6180 Railway Jobs Announced</div>
 
-      <div class="slide lang lang-en">RRB Recruitment for 6180 posts</div>
-      <div class="slide lang lang-en">Modi launches ₹5200 crore projects in Bihar</div>
-      <div class="slide lang lang-en">Bullet train bridge work continues</div>
+      <div class="slide lang lang-hi">मोदी का बिहार में 5200 करोड़ का उद्घाटन</div>
+      <div class="slide lang lang-en">Modi Launches ₹5200 Cr Projects in Bihar</div>
+
+      <div class="slide lang lang-hi">बुलेट ट्रेन ब्रिज कार्य जारी</div>
+      <div class="slide lang lang-en">Bullet Train Bridge Work Continues</div>
     </div>
   </section>
 
-  <!-- Articles -->
   <section class="articles">
     <article>
       <img src="https://govtjobsalert.in/wp-content/uploads/2025/06/RRB-Technician-Recruitment-2025-CEN-022025.jpg" />
       <h3 class="lang lang-hi">रेलवे में 6180 पदों पर भर्ती</h3>
-      <h3 class="lang lang-en">RRB Announces 6180 Posts</h3>
+      <h3 class="lang lang-en">6180 Railway Technical Posts Open</h3>
       <p class="lang lang-hi">भारतीय रेलवे ने 6180 टेक्निकल पदों की भर्ती की घोषणा की है।</p>
-      <p class="lang lang-en">Indian Railways announces recruitment for 6180 technical posts.</p>
-      <div class="engage">
-        <button class="like-btn" data-id="news1" onclick="incrementLike(this)">👍 Like (0)</button>
-        <button onclick="leaveComment()">💬 Comment</button>
-      </div>
+      <p class="lang lang-en">Indian Railways has announced recruitment for 6180 technical posts.</p>
     </article>
 
     <article>
       <img src="https://ncrtc.in/wp-content/uploads/2023/10/IMG-20231020-WA0061-1536x951.jpg" />
       <h3 class="lang lang-hi">मोदी का उद्घाटन</h3>
-      <h3 class="lang lang-en">Modi’s Inauguration</h3>
+      <h3 class="lang lang-en">Modi's Inauguration</h3>
       <p class="lang lang-hi">प्रधानमंत्री ने बिहार में ₹5200 करोड़ की परियोजनाओं का उद्घाटन किया।</p>
-      <p class="lang lang-en">PM Modi inaugurated projects worth ₹5200 crore in Bihar.</p>
-      <div class="engage">
-        <button class="like-btn" data-id="news2" onclick="incrementLike(this)">👍 Like (0)</button>
-        <button onclick="leaveComment()">💬 Comment</button>
-      </div>
+      <p class="lang lang-en">PM inaugurated ₹5200 crore worth projects in Bihar.</p>
     </article>
 
     <article>
@@ -85,72 +77,49 @@
       <h3 class="lang lang-hi">बुलेट ट्रेन अपडेट</h3>
       <h3 class="lang lang-en">Bullet Train Update</h3>
       <p class="lang lang-hi">विश्वामित्री नदी पर ब्रिज निर्माण कार्य मानसून में भी जारी रहेगा।</p>
-      <p class="lang lang-en">Bridge work over Vishwamitri river will continue during monsoon.</p>
-      <div class="engage">
-        <button class="like-btn" data-id="news3" onclick="incrementLike(this)">👍 Like (0)</button>
-        <button onclick="leaveComment()">💬 Comment</button>
-      </div>
+      <p class="lang lang-en">Bridge work over Vishwamitri river to continue even during monsoon.</p>
     </article>
   </section>
 
-  <!-- Newsletter -->
   <section class="newsletter">
     <h2 class="lang lang-hi">न्यूज़लेटर के लिए सब्सक्राइब करें</h2>
     <h2 class="lang lang-en">Subscribe to our Newsletter</h2>
     <form onsubmit="subscribe(event)">
-      <input type="email" placeholder="Enter your email" required />
+      <input type="email" placeholder="Your email" required />
       <button type="submit" class="lang lang-hi">सब्सक्राइब</button>
       <button type="submit" class="lang lang-en">Subscribe</button>
     </form>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p class="lang lang-hi">© 2025 डेली न्यूज़. सर्वाधिकार सुरक्षित।</p>
     <p class="lang lang-en">© 2025 Daily News. All rights reserved.</p>
     <nav>
       <a href="#" class="lang lang-hi">गोपनीयता नीति</a>
-      <a href="#" class="lang lang-hi">नियम व शर्तें</a>
       <a href="#" class="lang lang-en">Privacy Policy</a>
+
+      <a href="#" class="lang lang-hi">नियम व शर्तें</a>
       <a href="#" class="lang lang-en">Terms & Conditions</a>
     </nav>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- 🔧 JavaScript for Language Toggle -->
   <script>
-    function incrementLike(btn) {
-      const id = btn.dataset.id;
-      let count = parseInt(localStorage.getItem(id) || '0');
-      count++;
-      localStorage.setItem(id, count);
-      btn.textContent = `👍 Like (${count})`;
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+      localStorage.setItem("preferredLang", lang);
     }
 
-    function leaveComment() {
-      const comment = prompt("Enter your comment:");
-      if (comment) alert("Thank you! Your comment has been recorded.");
-    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const lang = localStorage.getItem("preferredLang") || 'hi';
+      switchLanguage(lang);
+    });
 
     function subscribe(event) {
       event.preventDefault();
       alert("Thank you for subscribing!");
     }
-
-    function switchLanguage(lang) {
-      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      // Default to Hindi
-      switchLanguage('hi');
-
-      document.querySelectorAll('.like-btn').forEach(btn => {
-        const id = btn.dataset.id;
-        const count = localStorage.getItem(id) || '0';
-        btn.textContent = `👍 Like (${count})`;
-      });
-    });
   </script>
 
 </body>
