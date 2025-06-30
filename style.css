@@ -26,7 +26,6 @@ nav a {
   margin: 0 0.5rem;
   text-decoration: none;
   color: #333;
-  font-weight: bold;
 }
 
 .banner {
@@ -46,9 +45,7 @@ nav a {
   left: 1rem;
   color: white;
   text-shadow: 1px 1px 5px black;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 0.5rem;
-  border-radius: 5px;
+  font-size: 2rem;
 }
 
 .trending-slider {
@@ -80,12 +77,8 @@ nav a {
 }
 
 @keyframes scroll {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .articles {
@@ -101,12 +94,18 @@ article {
   border-radius: 8px;
   overflow: hidden;
   padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 article img {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.engage button {
+  margin-right: 0.5rem;
+  padding: 5px 10px;
 }
 
 .newsletter {
@@ -126,10 +125,6 @@ article img {
 
 .newsletter button {
   padding: 0.5rem 1rem;
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 4px;
 }
 
 footer {
@@ -142,5 +137,4 @@ footer {
 footer nav a {
   color: #666;
   margin: 0 0.3rem;
-  font-size: 0.9rem;
 }
