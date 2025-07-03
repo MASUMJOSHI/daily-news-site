@@ -1,126 +1,62 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!--
+Full Stack Bilingual News Website Template (HTML + CSS + JS + Backend logic ready)
+Tech Stack Assumed: HTML, CSS, JavaScript (Frontend), Node.js + Express (Backend), MongoDB (Database)
+This file only includes the frontend. Let me know if you want full backend files separately zipped or deployed live.
+--><!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily News</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bilingual Hindi & English News Website">
+  <title>Global News Today</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
-
-  <!-- 🔀 Language Switcher -->
-  <div class="language-switch">
-    <button onclick="switchLanguage('hi')">हिन्दी</button>
-    <button onclick="switchLanguage('en')">English</button>
-  </div>
-
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/News.svg/2048px-News.svg.png" alt="Logo" class="logo" />
-    <nav>
-      <a href="#" class="lang lang-hi">होम</a>
-      <a href="#" class="lang lang-en">Home</a>
-
-      <a href="#" class="lang lang-hi">राष्ट्रीय</a>
-      <a href="#" class="lang lang-en">National</a>
-
-      <a href="#" class="lang lang-hi">खेल</a>
-      <a href="#" class="lang lang-en">Sports</a>
-
-      <a href="#" class="lang lang-hi">मनोरंजन</a>
-      <a href="#" class="lang lang-en">Entertainment</a>
-
-      <a href="#" class="lang lang-hi">संपर्क</a>
-      <a href="#" class="lang lang-en">Contact</a>
-    </nav>
-  </header>
-
-  <section class="banner">
-    <img src="https://images.unsplash.com/photo-1581091870622-2c1b1d49fa2b" alt="Banner" />
-    <h1 class="lang lang-hi">आज की मुख्य खबरें</h1>
-    <h1 class="lang lang-en">Top News of the Day</h1>
-  </section>
-
-  <section class="trending-slider">
-    <h2 class="lang lang-hi">📢 ट्रेंडिंग न्यूज़</h2>
-    <h2 class="lang lang-en">📢 Trending News</h2>
-    <div class="slider">
-      <div class="slide lang lang-hi">रेलवे में 6180 पदों पर भर्ती</div>
-      <div class="slide lang lang-en">6180 Railway Jobs Announced</div>
-
-      <div class="slide lang lang-hi">मोदी का बिहार में 5200 करोड़ का उद्घाटन</div>
-      <div class="slide lang lang-en">Modi Launches ₹5200 Cr Projects in Bihar</div>
-
-      <div class="slide lang lang-hi">बुलेट ट्रेन ब्रिज कार्य जारी</div>
-      <div class="slide lang lang-en">Bullet Train Bridge Work Continues</div>
+    <div class="top-bar">
+      <div class="logo">🌐 Global News Today</div>
+      <div class="lang-toggle">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('hi')">हिन्दी</button>
+      </div>
     </div>
-  </section>
-
-  <section class="articles">
-    <article>
-      <img src="https://govtjobsalert.in/wp-content/uploads/2025/06/RRB-Technician-Recruitment-2025-CEN-022025.jpg" />
-      <h3 class="lang lang-hi">रेलवे में 6180 पदों पर भर्ती</h3>
-      <h3 class="lang lang-en">6180 Railway Technical Posts Open</h3>
-      <p class="lang lang-hi">भारतीय रेलवे ने 6180 टेक्निकल पदों की भर्ती की घोषणा की है।</p>
-      <p class="lang lang-en">Indian Railways has announced recruitment for 6180 technical posts.</p>
+    <div class="breaking-news">
+      <marquee behavior="scroll" direction="left">Breaking News: India's Lunar Mission Succeeds | मानसून दस्तक दे चुका है | World Leaders Meet at G20</marquee>
+    </div>
+  </header>  <main>
+    <section class="articles" id="news-container">
+      <!-- News articles will be loaded dynamically here -->
+    </section>
+  </main>  <footer>
+    <div class="footer-top">
+      <form id="subscribe-form">
+        <label for="email">Subscribe for Updates:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="contact-info">
+        <p>📧 Email: contact@globalnewstoday.com</p>
+        <p>📞 Phone: +91-9876543210</p>
+      </div>
+      <div class="social-links">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Global News Today. All rights reserved.</p>
+  </footer>  <!-- Template for news cards (used by JS) -->  <template id="news-template">
+    <article class="news-card">
+      <img src="" alt="news image" class="news-image">
+      <h2 class="news-title"></h2>
+      <p class="news-snippet"></p>
+      <button class="read-more">Read More</button>
+      <div class="share-buttons">
+        <a href="#" target="_blank">Share on WhatsApp</a>
+        <a href="#" target="_blank">Share on Facebook</a>
+        <a href="#" target="_blank">Share on Twitter</a>
+      </div>
     </article>
-
-    <article>
-      <img src="https://ncrtc.in/wp-content/uploads/2023/10/IMG-20231020-WA0061-1536x951.jpg" />
-      <h3 class="lang lang-hi">मोदी का उद्घाटन</h3>
-      <h3 class="lang lang-en">Modi's Inauguration</h3>
-      <p class="lang lang-hi">प्रधानमंत्री ने बिहार में ₹5200 करोड़ की परियोजनाओं का उद्घाटन किया।</p>
-      <p class="lang lang-en">PM inaugurated ₹5200 crore worth projects in Bihar.</p>
-    </article>
-
-    <article>
-      <img src="https://plus.unsplash.com/premium_photo-1664297436720-dfd46b2a51de?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-      <h3 class="lang lang-hi">बुलेट ट्रेन अपडेट</h3>
-      <h3 class="lang lang-en">Bullet Train Update</h3>
-      <p class="lang lang-hi">विश्वामित्री नदी पर ब्रिज निर्माण कार्य मानसून में भी जारी रहेगा।</p>
-      <p class="lang lang-en">Bridge work over Vishwamitri river to continue even during monsoon.</p>
-    </article>
-  </section>
-
-  <section class="newsletter">
-    <h2 class="lang lang-hi">न्यूज़लेटर के लिए सब्सक्राइब करें</h2>
-    <h2 class="lang lang-en">Subscribe to our Newsletter</h2>
-    <form onsubmit="subscribe(event)">
-      <input type="email" placeholder="Your email" required />
-      <button type="submit" class="lang lang-hi">सब्सक्राइब</button>
-      <button type="submit" class="lang lang-en">Subscribe</button>
-    </form>
-  </section>
-
-  <footer>
-    <p class="lang lang-hi">© 2025 डेली न्यूज़. सर्वाधिकार सुरक्षित।</p>
-    <p class="lang lang-en">© 2025 Daily News. All rights reserved.</p>
-    <nav>
-      <a href="#" class="lang lang-hi">गोपनीयता नीति</a>
-      <a href="#" class="lang lang-en">Privacy Policy</a>
-
-      <a href="#" class="lang lang-hi">नियम व शर्तें</a>
-      <a href="#" class="lang lang-en">Terms & Conditions</a>
-    </nav>
-  </footer>
-
-  <!-- 🔧 JavaScript for Language Toggle -->
-  <script>
-    function switchLanguage(lang) {
-      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
-      localStorage.setItem("preferredLang", lang);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const lang = localStorage.getItem("preferredLang") || 'hi';
-      switchLanguage(lang);
-    });
-
-    function subscribe(event) {
-      event.preventDefault();
-      alert("Thank you for subscribing!");
-    }
-  </script>
-
+  </template>
 </body>
 </html>
